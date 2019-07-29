@@ -52,6 +52,11 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailList: RestaurantDetailViewController
+        detailList  = storyboard?.instantiateViewController(withIdentifier: "DetailList") as! RestaurantDetailViewController
+        detailList.id = model.restaurantAtIndex(atIndex: indexPath.row)?.id ?? 0
+        navigationController?.pushViewController(detailList, animated: true)
+    }
 }
 

@@ -13,6 +13,7 @@
 		107E07FD22ECFF3300A53F2A /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107E07FC22ECFF3300A53F2A /* Kingfisher.framework */; };
 		107E07FE22ECFF3300A53F2A /* Kingfisher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 107E07FC22ECFF3300A53F2A /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		10A2F66322EE42ED005474E5 /* RestaurantListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A2F66222EE42ED005474E5 /* RestaurantListCell.swift */; };
+		10D7886F22EF793700207322 /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D7886E22EF793700207322 /* RestaurantDetailViewController.swift */; };
 		10E0F11322EC6938005D62E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0F11222EC6938005D62E4 /* AppDelegate.swift */; };
 		10E0F11522EC6938005D62E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0F11422EC6938005D62E4 /* ViewController.swift */; };
 		10E0F11822EC6938005D62E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10E0F11622EC6938005D62E4 /* Main.storyboard */; };
@@ -50,6 +51,7 @@
 		107E07F822ECFBFE00A53F2A /* Collection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extension.swift"; sourceTree = "<group>"; };
 		107E07FC22ECFF3300A53F2A /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		10A2F66222EE42ED005474E5 /* RestaurantListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListCell.swift; sourceTree = "<group>"; };
+		10D7886E22EF793700207322 /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
 		10E0F10F22EC6938005D62E4 /* RBCApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RBCApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10E0F11222EC6938005D62E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10E0F11422EC6938005D62E4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 		107E07F322ECE0A100A53F2A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				10D7886E22EF793700207322 /* RestaurantDetailViewController.swift */,
 				10A2F66222EE42ED005474E5 /* RestaurantListCell.swift */,
 				10E0F11422EC6938005D62E4 /* ViewController.swift */,
 			);
@@ -294,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				107E07F222ECDEB700A53F2A /* RestaurantListViewModel.swift in Sources */,
+				10D7886F22EF793700207322 /* RestaurantDetailViewController.swift in Sources */,
 				10EE4D0722EDC02C00CA128E /* RestaurantDetailManager.swift in Sources */,
 				10E0F11522EC6938005D62E4 /* ViewController.swift in Sources */,
 				107E07F622ECF1BC00A53F2A /* RestaurantListModel.swift in Sources */,
