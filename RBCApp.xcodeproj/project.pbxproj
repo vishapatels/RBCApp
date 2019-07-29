@@ -1,0 +1,519 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		107E07F222ECDEB700A53F2A /* RestaurantListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107E07F122ECDEB700A53F2A /* RestaurantListViewModel.swift */; };
+		107E07F622ECF1BC00A53F2A /* RestaurantListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107E07F522ECF1BC00A53F2A /* RestaurantListModel.swift */; };
+		107E07F922ECFBFE00A53F2A /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107E07F822ECFBFE00A53F2A /* Collection+Extension.swift */; };
+		107E07FD22ECFF3300A53F2A /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107E07FC22ECFF3300A53F2A /* Kingfisher.framework */; };
+		107E07FE22ECFF3300A53F2A /* Kingfisher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 107E07FC22ECFF3300A53F2A /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		10A2F66322EE42ED005474E5 /* RestaurantListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A2F66222EE42ED005474E5 /* RestaurantListCell.swift */; };
+		10E0F11322EC6938005D62E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0F11222EC6938005D62E4 /* AppDelegate.swift */; };
+		10E0F11522EC6938005D62E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0F11422EC6938005D62E4 /* ViewController.swift */; };
+		10E0F11822EC6938005D62E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10E0F11622EC6938005D62E4 /* Main.storyboard */; };
+		10E0F11A22EC693B005D62E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10E0F11922EC693B005D62E4 /* Assets.xcassets */; };
+		10E0F11D22EC693B005D62E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10E0F11B22EC693B005D62E4 /* LaunchScreen.storyboard */; };
+		10E0F12622EC6978005D62E4 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0F12522EC6978005D62E4 /* APIService.swift */; };
+		10E0F12822EC6999005D62E4 /* CoreServiceCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0F12722EC6999005D62E4 /* CoreServiceCodable.swift */; };
+		10E0F12A22EC69BB005D62E4 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0F12922EC69BB005D62E4 /* Router.swift */; };
+		10E0F12D22EC69FB005D62E4 /* ManagerInjected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0F12C22EC69FB005D62E4 /* ManagerInjected.swift */; };
+		10E0F13022EC6A2D005D62E4 /* NibFileLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0F12F22EC6A2D005D62E4 /* NibFileLoadable.swift */; };
+		10E0F13222EC6A8D005D62E4 /* RestaurantsListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0F13122EC6A8D005D62E4 /* RestaurantsListManager.swift */; };
+		10E0F13422EC6ABF005D62E4 /* Loggable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0F13322EC6ABF005D62E4 /* Loggable.swift */; };
+		10E0F13722EC6FF3005D62E4 /* RestaurantDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0F13622EC6FF3005D62E4 /* RestaurantDetailModel.swift */; };
+		10EE4D0722EDC02C00CA128E /* RestaurantDetailManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EE4D0622EDC02C00CA128E /* RestaurantDetailManager.swift */; };
+		10EE4D0922EDC39C00CA128E /* RestaurantDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EE4D0822EDC39C00CA128E /* RestaurantDetailViewModel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		107E07FF22ECFF3300A53F2A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				107E07FE22ECFF3300A53F2A /* Kingfisher.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		107E07F122ECDEB700A53F2A /* RestaurantListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListViewModel.swift; sourceTree = "<group>"; };
+		107E07F522ECF1BC00A53F2A /* RestaurantListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListModel.swift; sourceTree = "<group>"; };
+		107E07F822ECFBFE00A53F2A /* Collection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extension.swift"; sourceTree = "<group>"; };
+		107E07FC22ECFF3300A53F2A /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
+		10A2F66222EE42ED005474E5 /* RestaurantListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListCell.swift; sourceTree = "<group>"; };
+		10E0F10F22EC6938005D62E4 /* RBCApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RBCApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		10E0F11222EC6938005D62E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		10E0F11422EC6938005D62E4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		10E0F11722EC6938005D62E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		10E0F11922EC693B005D62E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		10E0F11C22EC693B005D62E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		10E0F11E22EC693B005D62E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		10E0F12522EC6978005D62E4 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		10E0F12722EC6999005D62E4 /* CoreServiceCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreServiceCodable.swift; sourceTree = "<group>"; };
+		10E0F12922EC69BB005D62E4 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		10E0F12C22EC69FB005D62E4 /* ManagerInjected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerInjected.swift; sourceTree = "<group>"; };
+		10E0F12F22EC6A2D005D62E4 /* NibFileLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibFileLoadable.swift; sourceTree = "<group>"; };
+		10E0F13122EC6A8D005D62E4 /* RestaurantsListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsListManager.swift; sourceTree = "<group>"; };
+		10E0F13322EC6ABF005D62E4 /* Loggable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loggable.swift; sourceTree = "<group>"; };
+		10E0F13622EC6FF3005D62E4 /* RestaurantDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailModel.swift; sourceTree = "<group>"; };
+		10EE4D0622EDC02C00CA128E /* RestaurantDetailManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailManager.swift; sourceTree = "<group>"; };
+		10EE4D0822EDC39C00CA128E /* RestaurantDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		10E0F10C22EC6938005D62E4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				107E07FD22ECFF3300A53F2A /* Kingfisher.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		107E07F022ECDEA100A53F2A /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				107E07F122ECDEB700A53F2A /* RestaurantListViewModel.swift */,
+				10EE4D0822EDC39C00CA128E /* RestaurantDetailViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		107E07F322ECE0A100A53F2A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				10A2F66222EE42ED005474E5 /* RestaurantListCell.swift */,
+				10E0F11422EC6938005D62E4 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		107E07F422ECE0BA00A53F2A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				10E0F11622EC6938005D62E4 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		107E07F722ECFBE400A53F2A /* CoreUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				107E07F822ECFBFE00A53F2A /* Collection+Extension.swift */,
+			);
+			path = CoreUtilities;
+			sourceTree = "<group>";
+		};
+		107E07FB22ECFF3300A53F2A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				107E07FC22ECFF3300A53F2A /* Kingfisher.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		10E0F10622EC6938005D62E4 = {
+			isa = PBXGroup;
+			children = (
+				10E0F11122EC6938005D62E4 /* RBCApp */,
+				10E0F11022EC6938005D62E4 /* Products */,
+				107E07FB22ECFF3300A53F2A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		10E0F11022EC6938005D62E4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				10E0F10F22EC6938005D62E4 /* RBCApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		10E0F11122EC6938005D62E4 /* RBCApp */ = {
+			isa = PBXGroup;
+			children = (
+				107E07F722ECFBE400A53F2A /* CoreUtilities */,
+				10E0F12E22EC6A1C005D62E4 /* Protocols */,
+				10E0F12B22EC69DF005D62E4 /* Injection */,
+				10E0F12422EC694A005D62E4 /* API Model */,
+				10E0F13522EC6FD4005D62E4 /* Model */,
+				107E07F022ECDEA100A53F2A /* View Model */,
+				107E07F322ECE0A100A53F2A /* Controller */,
+				107E07F422ECE0BA00A53F2A /* View */,
+				10E0F11222EC6938005D62E4 /* AppDelegate.swift */,
+				10E0F11922EC693B005D62E4 /* Assets.xcassets */,
+				10E0F11B22EC693B005D62E4 /* LaunchScreen.storyboard */,
+				10E0F11E22EC693B005D62E4 /* Info.plist */,
+				10E0F13322EC6ABF005D62E4 /* Loggable.swift */,
+			);
+			path = RBCApp;
+			sourceTree = "<group>";
+		};
+		10E0F12422EC694A005D62E4 /* API Model */ = {
+			isa = PBXGroup;
+			children = (
+				10E0F12522EC6978005D62E4 /* APIService.swift */,
+				10E0F12722EC6999005D62E4 /* CoreServiceCodable.swift */,
+				10E0F12922EC69BB005D62E4 /* Router.swift */,
+				10E0F13122EC6A8D005D62E4 /* RestaurantsListManager.swift */,
+				10EE4D0622EDC02C00CA128E /* RestaurantDetailManager.swift */,
+			);
+			path = "API Model";
+			sourceTree = "<group>";
+		};
+		10E0F12B22EC69DF005D62E4 /* Injection */ = {
+			isa = PBXGroup;
+			children = (
+				10E0F12C22EC69FB005D62E4 /* ManagerInjected.swift */,
+			);
+			path = Injection;
+			sourceTree = "<group>";
+		};
+		10E0F12E22EC6A1C005D62E4 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				10E0F12F22EC6A2D005D62E4 /* NibFileLoadable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		10E0F13522EC6FD4005D62E4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				10E0F13622EC6FF3005D62E4 /* RestaurantDetailModel.swift */,
+				107E07F522ECF1BC00A53F2A /* RestaurantListModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		10E0F10E22EC6938005D62E4 /* RBCApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 10E0F12122EC693B005D62E4 /* Build configuration list for PBXNativeTarget "RBCApp" */;
+			buildPhases = (
+				10E0F10B22EC6938005D62E4 /* Sources */,
+				10E0F10C22EC6938005D62E4 /* Frameworks */,
+				10E0F10D22EC6938005D62E4 /* Resources */,
+				107E07FA22ECFEE300A53F2A /* Carthage */,
+				107E07FF22ECFF3300A53F2A /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RBCApp;
+			productName = RBCApp;
+			productReference = 10E0F10F22EC6938005D62E4 /* RBCApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		10E0F10722EC6938005D62E4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Visha Shanghvi";
+				TargetAttributes = {
+					10E0F10E22EC6938005D62E4 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = 10E0F10A22EC6938005D62E4 /* Build configuration list for PBXProject "RBCApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 10E0F10622EC6938005D62E4;
+			productRefGroup = 10E0F11022EC6938005D62E4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				10E0F10E22EC6938005D62E4 /* RBCApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		10E0F10D22EC6938005D62E4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10E0F11D22EC693B005D62E4 /* LaunchScreen.storyboard in Resources */,
+				10E0F11A22EC693B005D62E4 /* Assets.xcassets in Resources */,
+				10E0F11822EC6938005D62E4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		107E07FA22ECFEE300A53F2A /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
+			);
+			name = Carthage;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Kingfisher.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		10E0F10B22EC6938005D62E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				107E07F222ECDEB700A53F2A /* RestaurantListViewModel.swift in Sources */,
+				10EE4D0722EDC02C00CA128E /* RestaurantDetailManager.swift in Sources */,
+				10E0F11522EC6938005D62E4 /* ViewController.swift in Sources */,
+				107E07F622ECF1BC00A53F2A /* RestaurantListModel.swift in Sources */,
+				10E0F13022EC6A2D005D62E4 /* NibFileLoadable.swift in Sources */,
+				10E0F13222EC6A8D005D62E4 /* RestaurantsListManager.swift in Sources */,
+				10E0F12622EC6978005D62E4 /* APIService.swift in Sources */,
+				10E0F12A22EC69BB005D62E4 /* Router.swift in Sources */,
+				10A2F66322EE42ED005474E5 /* RestaurantListCell.swift in Sources */,
+				10E0F12D22EC69FB005D62E4 /* ManagerInjected.swift in Sources */,
+				107E07F922ECFBFE00A53F2A /* Collection+Extension.swift in Sources */,
+				10E0F13722EC6FF3005D62E4 /* RestaurantDetailModel.swift in Sources */,
+				10E0F13422EC6ABF005D62E4 /* Loggable.swift in Sources */,
+				10EE4D0922EDC39C00CA128E /* RestaurantDetailViewModel.swift in Sources */,
+				10E0F11322EC6938005D62E4 /* AppDelegate.swift in Sources */,
+				10E0F12822EC6999005D62E4 /* CoreServiceCodable.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		10E0F11622EC6938005D62E4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				10E0F11722EC6938005D62E4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		10E0F11B22EC693B005D62E4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				10E0F11C22EC693B005D62E4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		10E0F11F22EC693B005D62E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		10E0F12022EC693B005D62E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		10E0F12222EC693B005D62E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = RBCApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.visha.RBCApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		10E0F12322EC693B005D62E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = RBCApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.visha.RBCApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		10E0F10A22EC6938005D62E4 /* Build configuration list for PBXProject "RBCApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				10E0F11F22EC693B005D62E4 /* Debug */,
+				10E0F12022EC693B005D62E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		10E0F12122EC693B005D62E4 /* Build configuration list for PBXNativeTarget "RBCApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				10E0F12222EC693B005D62E4 /* Debug */,
+				10E0F12322EC693B005D62E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 10E0F10722EC6938005D62E4 /* Project object */;
+}
