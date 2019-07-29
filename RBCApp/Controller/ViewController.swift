@@ -15,7 +15,6 @@ class ViewController: UIViewController {
     var model = RestaurantListViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         model.getRestaurantListData(completion: { [weak self] (result) in
             switch result {
             case .success:
@@ -24,18 +23,7 @@ class ViewController: UIViewController {
                 print(err)
             }
         })
-        
-//        models.getRestaurantDetailData(id: "LiY0vRXMWrjUrXQr2Z_D4A", completion: { [weak self] (result) in
-//            switch result {
-//            case .success(let restaurantList):
-//                print(restaurantList)
-//            case .failure(let err):
-//                print(err)
-//            }
-//        })
     }
-
-
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
@@ -55,8 +43,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailList: RestaurantDetailViewController
         detailList  = storyboard?.instantiateViewController(withIdentifier: "DetailList") as! RestaurantDetailViewController
-        detailList.id = model.restaurantAtIndex(atIndex: indexPath.row)?.id ?? 0
+        detailList.id = model.restaurantAtIndex(atIndex: indexPath.row)?.id ?? ""
         navigationController?.pushViewController(detailList, animated: true)
     }
+    
 }
 
