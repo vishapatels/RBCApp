@@ -24,7 +24,7 @@ final class HoursView: UIView {
     }
     
     private func configure(day: String, open: String, close: String) {
-        dayLabel.text = day
+        dayLabel.text = day + ":" 
         openLabel.text = open
         closeLabel.text = close
     }

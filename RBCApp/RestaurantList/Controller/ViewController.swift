@@ -72,11 +72,12 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantList", for: indexPath) as! RestaurantListCell
         cell.name.text = model.restaurantAtIndex(atIndex: indexPath.row)?.name
         rating = model.restaurantAtIndex(atIndex: indexPath.row)?.rating
-        //imageView?.image = model.getStarImage(starNumber: index + 1, forRating: rating)
-        
        // cell.rating.text = model.restaurantAtIndex(atIndex: indexPath.row)?.rating
         if let url = URL(string: model.restaurantAtIndex(atIndex: indexPath.row)?.imageURL ?? "NA") {
             cell.restaurantImage.kf.setImage(with: url)
+        }
+        if indexPath.row == model.numberOfRows {
+           print(indexPath.row)
         }
         return cell
     }
@@ -88,6 +89,22 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         navigationController?.pushViewController(detailList, animated: true)
     }
     
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        let currentOffset = scrollView.contentOffset.y
+        let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
+        if maximumOffset - currentOffset <= 10.0 {
+            model.getRestaurantListData(completion: { [weak self] (result) in
+             //   self?.removeLoadingView()
+                switch result {
+                case .success:
+                    self?.tableView.reloadData()
+                case .failure(let err):
+                    print(err)
+                }
+            })
+        }
+    }
+    
 }
 
 extension ViewController: UISearchBarDelegate {
@@ -95,3 +112,5 @@ extension ViewController: UISearchBarDelegate {
       //  searchRestaurant = model.restaurantListInfo()
     }
 }
+
+
