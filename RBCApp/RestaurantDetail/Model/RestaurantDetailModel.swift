@@ -7,6 +7,7 @@
 //
 
 import Foundation
+
 struct RestaurantDetailModel: CoreServiceCodable {
     var id, alias, name: String?
     var imageURL: String?
@@ -68,6 +69,8 @@ struct Open: CoreServiceCodable {
         case start, end, day
     }
 }
+
+
 
 
 struct Location: CoreServiceCodable {

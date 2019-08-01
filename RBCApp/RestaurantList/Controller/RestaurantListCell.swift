@@ -10,8 +10,12 @@ import UIKit
 
 class RestaurantListCell: UITableViewCell {
 
+    @IBOutlet weak var star5: UIImageView!
+    @IBOutlet weak var star4: UIImageView!
+    @IBOutlet weak var star3: UIImageView!
+    @IBOutlet weak var star2: UIImageView!
+    @IBOutlet weak var star1: UIImageView!
     @IBOutlet weak var restaurantImage: UIImageView!
-    @IBOutlet weak var rating: UILabel!
     @IBOutlet weak var name: UILabel!
     
     override func awakeFromNib() {

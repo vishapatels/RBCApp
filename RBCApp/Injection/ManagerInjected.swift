@@ -24,5 +24,4 @@ extension ManagerInjected {
 struct ManagerInjector {
     static var restaurantListManager: RestaurantListManagerProtocol = RestaurantsListManager()
     static var restaurantDetailManager: RestaurantDetailManagerProtocol = RestaurantsDetailManager()
-  
 }

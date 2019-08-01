@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 
 struct RestaurantListDataProvider {
@@ -25,6 +26,9 @@ struct RestaurantListDataProvider {
 }
 
 class RestaurantListViewModel {
+    let fullStarImage:  UIImage = UIImage(named: "starFull.png")!
+    let halfStarImage:  UIImage = UIImage(named: "starHalf.png")!
+   // let emptyStarImage: UIImage = UIImage(named: "starEmpty.png")!
     private var restaurantList : [RestaurantListDataProvider]?
     
     var numberOfRows: Int {
@@ -35,6 +39,22 @@ class RestaurantListViewModel {
         return restaurantList?[index]
     }
     
+    func sortAsc(sortValue: String?) {
+         sortValue == "Ascending" ? restaurantList?.sort(by: { $0.name.lowercased() < $1.name.lowercased() }) :
+        restaurantList?.sort(by: { $0.name.lowercased() > $1.name.lowercased() })
+    
+    }
+    func getStarImage(starNumber: Double, forRating rating: Double) -> UIImage {
+        if rating >= starNumber {
+            return fullStarImage
+        } else if rating + 0.5 == starNumber {
+            return halfStarImage
+        } else {
+            return halfStarImage
+        }
+    }
+    
+   
 }
 
 extension RestaurantListViewModel: ManagerInjected {
