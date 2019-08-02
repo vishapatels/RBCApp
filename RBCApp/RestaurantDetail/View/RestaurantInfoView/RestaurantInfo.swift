@@ -9,20 +9,20 @@
 import UIKit
 
 final class RestaurantInfo: UIView {
-
-    @IBOutlet weak var ratingViewContainer: UIView!
-    @IBOutlet weak var hoursOfOperationStackView: UIStackView!
-    @IBOutlet weak var callButton: UIButton!
-    @IBOutlet weak var stackView: UIStackView!
-    @IBOutlet weak var resZip: UILabel!
-    @IBOutlet weak var resCity: UILabel!
-    @IBOutlet weak var resAddress: UILabel!
-    @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var category: UILabel!
-    @IBOutlet weak var phone: UILabel!
+    
+    @IBOutlet var ratingViewContainer: UIView!
+    @IBOutlet var hoursOfOperationStackView: UIStackView!
+    @IBOutlet var callButton: UIButton!
+    @IBOutlet var stackView: UIStackView!
+    @IBOutlet var resZip: UILabel!
+    @IBOutlet var resCity: UILabel!
+    @IBOutlet var resAddress: UILabel!
+    @IBOutlet var name: UILabel!
+    @IBOutlet var category: UILabel!
+    @IBOutlet var phone: UILabel!
     var phoneNumber: String?
     var didTapCallButton: (() -> Void)?
-  
+    
     @IBAction func callButtonAction(_ sender: Any) {
         didTapCallButton?()
     }
@@ -33,14 +33,12 @@ final class RestaurantInfo: UIView {
         return infoView
     }
     
-    private var hoursLabel: UILabel =  {
+    private var hoursLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
         return label
     }()
-    
-    
     
     private func configureView(info: RestaurantDetailDataProvider) {
         name.text = info.name
@@ -51,11 +49,11 @@ final class RestaurantInfo: UIView {
         callButton.setTitle(info.displayPhone ?? "", for: .normal)
         callButton.contentHorizontalAlignment = UIControl.ContentHorizontalAlignment.right
         phoneNumber = info.displayPhone
-        let ratingView =  Rating.create(ratingValue: info.rating )
+        let ratingView = Rating.create(ratingValue: info.rating)
         ratingViewContainer.addConstraintSubview(ratingView)
         
         info.photos.forEach { str in
-            if let url = URL(string: str ) {
+            if let url = URL(string: str) {
                 let imageView = UIImageView()
                 imageView.kf.setImage(with: url)
                 imageView.layer.masksToBounds = true
@@ -68,7 +66,7 @@ final class RestaurantInfo: UIView {
                 stackView.spacing = 20
             }
         }
-    
+        
         if info.hours.isEmpty {
             let label = UILabel()
             label.text = "Information Not Available"
@@ -76,11 +74,10 @@ final class RestaurantInfo: UIView {
             hoursOfOperationStackView.addArrangedSubview(label)
         }
         else {
-        info.hours.forEach { hours in
-            let hoursView = HoursView.create(day: hours.day ?? "", open: hours.start ?? "", close: hours.end ?? "")
-            hoursOfOperationStackView.addArrangedSubview(UIView.createView(withSubview: hoursView))
+            info.hours.forEach { hours in
+                let hoursView = HoursView.create(day: hours.day ?? "", open: hours.start ?? "", close: hours.end ?? "")
+                hoursOfOperationStackView.addArrangedSubview(UIView.createView(withSubview: hoursView))
+            }
         }
-        }
-        
     }
 }
