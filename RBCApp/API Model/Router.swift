@@ -28,7 +28,7 @@ enum Router {
         }
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = httpMethod
-        urlRequest.httpBody = getData
+        //urlRequest.httpBody = getData
         urlRequest.allHTTPHeaderFields = httpHeaders
         return urlRequest
     }
@@ -44,16 +44,6 @@ enum Router {
         return HTTPMethod.get.rawValue
     }
     
-    var getData: Data? {
-        switch self {
-        case .getRestaurantsList(let term, let location, let limit, let offSet):
-            return nil
-        case .getRestaurantDetail(let id):
-            return nil
-      
-        }
-    }
-    
     var queryItems: [URLQueryItem]? {
         switch self {
         case .getRestaurantsList(let term, let location, let limit, let offSet):
@@ -61,7 +51,7 @@ enum Router {
                     URLQueryItem(name: "location", value: location),
                     URLQueryItem(name: "limit", value: limit),
                     URLQueryItem(name: "offset", value: offSet)]
-        case .getRestaurantDetail(let id):
+        case .getRestaurantDetail:
             return nil
         }
     }
@@ -74,7 +64,7 @@ enum Router {
     
     var path: String {
         switch self {
-        case .getRestaurantsList(let term, let location, let limit, let offset):
+        case .getRestaurantsList:
             return "/v3/businesses/search"
         case .getRestaurantDetail(let id ):
             return "/v3/businesses/" + id
