@@ -2,7 +2,7 @@
 //  UIView+Extension.swift
 //  RBCApp
 //
-//  Created by Smitesh Patel on 2019-07-29.
+//  Created by Visha Shanghvi on 2019-07-29.
 //  Copyright © 2019 Visha Shanghvi. All rights reserved.
 //
 
@@ -12,9 +12,7 @@ extension UIView {
     
     public func addConstraintSubview(_ view: UIView, edgeInset: UIEdgeInsets = .zero) {
         view.translatesAutoresizingMaskIntoConstraints = false
-        
         addSubview(view)
-        
         view.topAnchor.constraint(equalTo: topAnchor, constant: edgeInset.top).isActive = true
         view.bottomAnchor.constraint(equalTo: bottomAnchor, constant: edgeInset.bottom).isActive = true
         view.leadingAnchor.constraint(equalTo: leadingAnchor, constant: edgeInset.left).isActive = true

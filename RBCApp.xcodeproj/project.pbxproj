@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1006B5D422F49A110079ED84 /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1006B5D322F49A110079ED84 /* Rating.swift */; };
+		1006B5D722F4A26D0079ED84 /* Rating.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1006B5D622F4A26D0079ED84 /* Rating.xib */; };
 		1025A43822F0F29200726B4E /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1025A43622F0F29200726B4E /* LoadingView.xib */; };
 		1025A43922F0F29200726B4E /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1025A43722F0F29200726B4E /* LoadingView.swift */; };
 		1025A43B22F0FC1B00726B4E /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1025A43A22F0FC1B00726B4E /* UIViewController+Extension.swift */; };
@@ -70,6 +72,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1006B5D322F49A110079ED84 /* Rating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rating.swift; sourceTree = "<group>"; };
+		1006B5D622F4A26D0079ED84 /* Rating.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Rating.xib; sourceTree = "<group>"; };
 		1025A43622F0F29200726B4E /* LoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 		1025A43722F0F29200726B4E /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		1025A43A22F0FC1B00726B4E /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
@@ -336,6 +340,8 @@
 		10E6560522F326F30083F753 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1006B5D622F4A26D0079ED84 /* Rating.xib */,
+				1006B5D322F49A110079ED84 /* Rating.swift */,
 				10E0F11622EC6938005D62E4 /* Main.storyboard */,
 			);
 			path = View;
@@ -448,6 +454,7 @@
 				1025A43822F0F29200726B4E /* LoadingView.xib in Resources */,
 				10E6560922F327420083F753 /* RestaurantDetail.storyboard in Resources */,
 				10E0F11822EC6938005D62E4 /* Main.storyboard in Resources */,
+				1006B5D722F4A26D0079ED84 /* Rating.xib in Resources */,
 				102DCE6222EFC7EB00C4397D /* MapView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -502,6 +509,7 @@
 				102DCE6022EFC6B700C4397D /* MapView.swift in Sources */,
 				10E0F12622EC6978005D62E4 /* APIService.swift in Sources */,
 				10E0F12A22EC69BB005D62E4 /* Router.swift in Sources */,
+				1006B5D422F49A110079ED84 /* Rating.swift in Sources */,
 				1025A43B22F0FC1B00726B4E /* UIViewController+Extension.swift in Sources */,
 				10A2F66322EE42ED005474E5 /* RestaurantListCell.swift in Sources */,
 				10E0F12D22EC69FB005D62E4 /* ManagerInjected.swift in Sources */,

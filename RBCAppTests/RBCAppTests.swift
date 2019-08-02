@@ -2,7 +2,7 @@
 //  RBCAppTests.swift
 //  RBCAppTests
 //
-//  Created by Smitesh Patel on 2019-07-31.
+//  Created by Visha Shanghvi on 2019-07-31.
 //  Copyright © 2019 Visha Shanghvi. All rights reserved.
 //
 

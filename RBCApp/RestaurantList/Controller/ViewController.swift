@@ -22,10 +22,11 @@ class ViewController: UIViewController {
     var pickerData: [String] = [String]()
     var model = RestaurantListViewModel()
     var sortValue: String?
-    var rating: Double?
+    var rating: Double = 0.0
     var offset:String = "1"
     var pageIndex: Int = 1
     var isSearching: Bool = false
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,14 +51,23 @@ class ViewController: UIViewController {
             self.model.sortRestaurantList(sortValue: sortType.ascending.rawValue)
             self.tableView.reloadData()
         }
+        
         let descendingAction = UIAlertAction(title: "Descending", style: .default){ action -> Void in
             self.model.sortRestaurantList(sortValue: sortType.descending.rawValue)
             self.tableView.reloadData()
         }
+        
+        let ratingAction = UIAlertAction(title: "By Ratings", style: .default){ action -> Void in
+            self.model.sortRestaurantListbyRating()
+            self.tableView.reloadData()
+        }
+        
+        
         let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel)
         
         optionMenu.addAction(ascendingAction)
         optionMenu.addAction(descendingAction)
+        optionMenu.addAction(ratingAction)
         optionMenu.addAction(cancelAction)
         
         self.present(optionMenu, animated: true, completion: nil)
@@ -73,8 +83,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantList", for: indexPath) as! RestaurantListCell
         cell.name.text = model.restaurantAtIndex(atIndex: indexPath.row)?.name
-        rating = model.restaurantAtIndex(atIndex: indexPath.row)?.rating
-       // cell.rating.text = model.restaurantAtIndex(atIndex: indexPath.row)?.rating
+        cell.configureRating(ratingValue: model.restaurantAtIndex(atIndex: indexPath.row)?.rating ?? 0.0)
         if let url = URL(string: model.restaurantAtIndex(atIndex: indexPath.row)?.imageURL ?? "NA") {
             cell.restaurantImage.kf.setImage(with: url)
         }
@@ -111,11 +120,16 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension ViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
         model.searchRestaurantList(text: searchText)
         tableView.reloadData()
     }
    
+}
+
+extension ViewController {
+    func showStars() {
+        
+    }
 }
 
 

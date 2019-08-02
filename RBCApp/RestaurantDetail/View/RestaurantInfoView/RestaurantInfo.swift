@@ -10,6 +10,7 @@ import UIKit
 
 final class RestaurantInfo: UIView {
 
+    @IBOutlet weak var ratingViewContainer: UIView!
     @IBOutlet weak var hoursOfOperationStackView: UIStackView!
     @IBOutlet weak var callButton: UIButton!
     @IBOutlet weak var stackView: UIStackView!
@@ -39,21 +40,27 @@ final class RestaurantInfo: UIView {
         return label
     }()
     
+    
+    
     private func configureView(info: RestaurantDetailDataProvider) {
         name.text = info.name
-        resAddress.text = info.location.address1
-        resCity.text = info.location.city
-        resZip.text = info.location.zipCode
+        resAddress.text = info.location?.address1
+        resCity.text = info.location?.city
+        resZip.text = info.location?.zipCode
         category.text = info.category
         callButton.setTitle(info.displayPhone ?? "", for: .normal)
         callButton.contentHorizontalAlignment = UIControl.ContentHorizontalAlignment.right
         phoneNumber = info.displayPhone
+        let ratingView =  Rating.create(ratingValue: info.rating )
+        ratingViewContainer.addConstraintSubview(ratingView)
+        
         info.photos.forEach { str in
             if let url = URL(string: str ) {
                 let imageView = UIImageView()
                 imageView.kf.setImage(with: url)
                 imageView.layer.masksToBounds = true
                 imageView.layer.cornerRadius = 10
+                imageView.contentMode = .scaleAspectFill
                 stackView.addArrangedSubview(imageView)
                 stackView.translatesAutoresizingMaskIntoConstraints = false
                 stackView.distribution = .fillEqually
@@ -61,10 +68,19 @@ final class RestaurantInfo: UIView {
                 stackView.spacing = 20
             }
         }
-        
+    
+        if info.hours.isEmpty {
+            let label = UILabel()
+            label.text = "Information Not Available"
+            label.textAlignment = .center
+            hoursOfOperationStackView.addArrangedSubview(label)
+        }
+        else {
         info.hours.forEach { hours in
             let hoursView = HoursView.create(day: hours.day ?? "", open: hours.start ?? "", close: hours.end ?? "")
             hoursOfOperationStackView.addArrangedSubview(UIView.createView(withSubview: hoursView))
         }
+        }
+        
     }
 }

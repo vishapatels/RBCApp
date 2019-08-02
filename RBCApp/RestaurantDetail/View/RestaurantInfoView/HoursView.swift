@@ -2,7 +2,7 @@
 //  HoursView.swift
 //  RBCApp
 //
-//  Created by Smitesh Patel on 2019-08-01.
+//  Created by Visha Shanghvi on 2019-08-01.
 //  Copyright © 2019 Visha Shanghvi. All rights reserved.
 //
 

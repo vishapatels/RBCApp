@@ -25,12 +25,11 @@ struct RestaurantListDataProvider {
 }
 
 class RestaurantListViewModel {
-    let fullStarImage:  UIImage = UIImage(named: "starFull.png")!
-    let halfStarImage:  UIImage = UIImage(named: "starHalf.png")!
-   // let emptyStarImage: UIImage = UIImage(named: "starEmpty.png")!
+    
     var searchRestaurant = [String]()
     private var restaurantList : [RestaurantListDataProvider] = []
     private var restaurantListArray :[RestaurantListDataProvider] = []
+   
    
     var numberOfRows: Int {
         return restaurantListArray.count
@@ -45,9 +44,15 @@ class RestaurantListViewModel {
         restaurantListArray.sort(by: { $0.name.lowercased() > $1.name.lowercased() })
         
     }
+    
+    func sortRestaurantListbyRating() {
+        restaurantListArray.sort(by: { $0.rating > $1.rating } )
+    }
+    
     func searchRestaurantList(text: String) {
         restaurantListArray =  !text.isEmpty ? restaurantList.search(text: text) : restaurantList
     }
+    
     
 }
 

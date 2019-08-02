@@ -10,6 +10,7 @@ import UIKit
 
 class RestaurantListCell: UITableViewCell {
 
+    @IBOutlet weak var ratingContainerView: UIView!
     @IBOutlet weak var star5: UIImageView!
     @IBOutlet weak var star4: UIImageView!
     @IBOutlet weak var star3: UIImageView!
@@ -23,4 +24,10 @@ class RestaurantListCell: UITableViewCell {
         restaurantImage.layer.masksToBounds = true
         restaurantImage.layer.cornerRadius = 10
     }
+    
+    func configureRating(ratingValue: Double) {
+        let ratingView =  Rating.create(ratingValue: ratingValue )
+        ratingContainerView.addConstraintSubview(ratingView)
+    }
+    
 }

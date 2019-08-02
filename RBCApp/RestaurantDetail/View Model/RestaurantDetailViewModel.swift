@@ -16,14 +16,14 @@ struct RestaurantDetailDataProvider {
     var id: String
     var rating: Double
     var phone, displayPhone: String?
-    var location: Location
+    var location: Location?
     var category: String
     var hourType: String
     var photos:[String]
     var hours: [OpenHours]
     var isOpen: Bool
     
-    init(name: String, imageURL: String, id:String, rating: Double, phone:String, displayPhone:String, location: Location, category:String, hourType:String, photos:[String], hours: [OpenHours], isOpen: Bool) {
+    init(name: String, imageURL: String, id:String, rating: Double, phone:String, displayPhone:String, location: Location?, category:String, hourType:String, photos:[String], hours: [OpenHours], isOpen: Bool) {
         self.name = name
         self.imageURL = imageURL
         self.id = id
@@ -49,7 +49,7 @@ final class RestaurantDetailViewModel {
     
     var resInfo: RestaurantDetailDataProvider {
         
-        return (RestaurantDetailDataProvider(name: restaurantDetailModel?.name ?? "", imageURL: restaurantDetailModel?.imageURL ?? "", id: restaurantDetailModel?.id ?? "", rating: restaurantDetailModel?.rating ?? 0, phone: restaurantDetailModel?.phone ?? "", displayPhone: restaurantDetailModel?.displayPhone ?? "0", location: (restaurantDetailModel?.location)!, category: restaurantDetailModel?.category ?? "", hourType: restaurantDetailModel?.hourType ?? "",photos: restaurantDetailModel?.photos ?? [""], hours: (restaurantDetailModel?.openHours)!, isOpen: restaurantDetailModel?.isOpenNow ?? false))
+        return (RestaurantDetailDataProvider(name: restaurantDetailModel?.name ?? "", imageURL: restaurantDetailModel?.imageURL ?? "", id: restaurantDetailModel?.id ?? "", rating: restaurantDetailModel?.rating ?? 0, phone: restaurantDetailModel?.phone ?? "", displayPhone: restaurantDetailModel?.displayPhone ?? "0", location: restaurantDetailModel?.location, category: restaurantDetailModel?.category ?? "", hourType: restaurantDetailModel?.hourType ?? "",photos: restaurantDetailModel?.photos ?? [""], hours: restaurantDetailModel?.openHours ?? [], isOpen: restaurantDetailModel?.isOpenNow ?? false))
     }
     
 }
