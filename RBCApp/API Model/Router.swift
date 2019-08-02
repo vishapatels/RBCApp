@@ -14,7 +14,7 @@ enum HeaderField : String {
 
 enum Router {
     
-    case getRestaurantsList(term: String,location: String, limit: String)
+    case getRestaurantsList(term: String,location: String, limit: String, offset:String)
     case getRestaurantDetail(id:String)
     
     func urlRequest(baseUrl: URL) -> URLRequest? {
@@ -46,7 +46,7 @@ enum Router {
     
     var getData: Data? {
         switch self {
-        case .getRestaurantsList(let term, let location, let limit):
+        case .getRestaurantsList(let term, let location, let limit, let offSet):
             return nil
         case .getRestaurantDetail(let id):
             return nil
@@ -56,10 +56,11 @@ enum Router {
     
     var queryItems: [URLQueryItem]? {
         switch self {
-        case .getRestaurantsList(let term, let location, let limit):
+        case .getRestaurantsList(let term, let location, let limit, let offSet):
             return [URLQueryItem(name: "term", value: term),
                     URLQueryItem(name: "location", value: location),
-                    URLQueryItem(name: "limit", value: limit)]
+                    URLQueryItem(name: "limit", value: limit),
+                    URLQueryItem(name: "offset", value: offSet)]
         case .getRestaurantDetail(let id):
             return nil
         }
@@ -73,7 +74,7 @@ enum Router {
     
     var path: String {
         switch self {
-        case .getRestaurantsList(let term, let location, let limit):
+        case .getRestaurantsList(let term, let location, let limit, let offset):
             return "/v3/businesses/search"
         case .getRestaurantDetail(let id ):
             return "/v3/businesses/" + id

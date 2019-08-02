@@ -60,7 +60,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hQ9-pJ-m5z"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Usage" id="AEa-nP-9EA"/>
+                    <navigationItem key="navigationItem" title="RestaurantDetails" id="AEa-nP-9EA"/>
                     <connections>
                         <outlet property="scrollView" destination="UHr-i1-JE9" id="IvO-5U-pvj"/>
                         <outlet property="stackView" destination="9Ew-DK-JgP" id="hj3-HE-ArE"/>

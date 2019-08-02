@@ -21,16 +21,18 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var pickerData: [String] = [String]()
     var model = RestaurantListViewModel()
-    var searchRestaurant = [String]()
     var sortValue: String?
     var rating: Double?
+    var offset:String = "1"
+    var pageIndex: Int = 1
+    var isSearching: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 120
         showLoadingView()
-        model.getRestaurantListData(completion: { [weak self] (result) in
+        model.getRestaurantListData(offset: offset , completion: { [weak self] (result) in
             self?.removeLoadingView()
             switch result {
             case .success:
@@ -45,11 +47,11 @@ class ViewController: UIViewController {
         
        let optionMenu = UIAlertController(title: nil, message: "Choose Sorting Option", preferredStyle: .actionSheet)
         let ascendingAction = UIAlertAction(title: "Ascending", style: .default){ action -> Void in
-            self.model.sortAsc(sortValue: sortType.ascending.rawValue)
+            self.model.sortRestaurantList(sortValue: sortType.ascending.rawValue)
             self.tableView.reloadData()
         }
         let descendingAction = UIAlertAction(title: "Descending", style: .default){ action -> Void in
-            self.model.sortAsc(sortValue: sortType.descending.rawValue)
+            self.model.sortRestaurantList(sortValue: sortType.descending.rawValue)
             self.tableView.reloadData()
         }
         let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel)
@@ -76,9 +78,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         if let url = URL(string: model.restaurantAtIndex(atIndex: indexPath.row)?.imageURL ?? "NA") {
             cell.restaurantImage.kf.setImage(with: url)
         }
-        if indexPath.row == model.numberOfRows {
-           print(indexPath.row)
-        }
         return cell
     }
     
@@ -93,11 +92,14 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let currentOffset = scrollView.contentOffset.y
         let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
         if maximumOffset - currentOffset <= 10.0 {
-            model.getRestaurantListData(completion: { [weak self] (result) in
-             //   self?.removeLoadingView()
+            pageIndex = pageIndex + 1 * 10
+            showLoadingView()
+            model.getRestaurantListData(offset: String(pageIndex) ,completion: { [weak self] (result) in
+                self?.removeLoadingView()
                 switch result {
                 case .success:
                     self?.tableView.reloadData()
+                    self?.pageIndex += 1
                 case .failure(let err):
                     print(err)
                 }
@@ -109,8 +111,11 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension ViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-      //  searchRestaurant = model.restaurantListInfo()
+        
+        model.searchRestaurantList(text: searchText)
+        tableView.reloadData()
     }
+   
 }
 
 

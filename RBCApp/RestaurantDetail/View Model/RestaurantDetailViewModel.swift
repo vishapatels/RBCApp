@@ -48,6 +48,7 @@ final class RestaurantDetailViewModel {
     }
     
     var resInfo: RestaurantDetailDataProvider {
+        
         return (RestaurantDetailDataProvider(name: restaurantDetailModel?.name ?? "", imageURL: restaurantDetailModel?.imageURL ?? "", id: restaurantDetailModel?.id ?? "", rating: restaurantDetailModel?.rating ?? 0, phone: restaurantDetailModel?.phone ?? "", displayPhone: restaurantDetailModel?.displayPhone ?? "0", location: (restaurantDetailModel?.location)!, category: restaurantDetailModel?.category ?? "", hourType: restaurantDetailModel?.hourType ?? "",photos: restaurantDetailModel?.photos ?? [""], hours: (restaurantDetailModel?.openHours)!, isOpen: restaurantDetailModel?.isOpenNow ?? false))
     }
     

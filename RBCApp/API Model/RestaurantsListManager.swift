@@ -14,14 +14,14 @@ extension DispatchQueue {
 }
 
 protocol RestaurantListManagerProtocol {
-    func getRestaurantList(completionHandler complete: @escaping(ServiceResult<[RestaurantListDataProvider]>) -> Void)
+    func getRestaurantList(offset: String ,completionHandler complete: @escaping(ServiceResult<[RestaurantListDataProvider]>) -> Void)
 }
 
 final class RestaurantsListManager: RestaurantListManagerProtocol {
     
-    func getRestaurantList(completionHandler complete: @escaping(ServiceResult<[RestaurantListDataProvider]>) -> Void) {
+    func getRestaurantList(offset:String, completionHandler complete: @escaping(ServiceResult<[RestaurantListDataProvider]>) -> Void) {
         DispatchQueue.restuarantManager.async {
-            APIService.shared.performRequest(router: .getRestaurantsList(term: "delis",location: "toronto",limit: "10"), completionHandler: { result in
+            APIService.shared.performRequest(router: .getRestaurantsList(term: "delis",location: "toronto",limit: "10",offset: offset), completionHandler: { result in
                 switch result {
                 case .success(let data):
                     if let data = data, let restaurantList: RestaurantListModel = RestaurantListModel.from(data: data) {

@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 
-
 struct RestaurantListDataProvider {
     
     var name: String
@@ -29,45 +28,50 @@ class RestaurantListViewModel {
     let fullStarImage:  UIImage = UIImage(named: "starFull.png")!
     let halfStarImage:  UIImage = UIImage(named: "starHalf.png")!
    // let emptyStarImage: UIImage = UIImage(named: "starEmpty.png")!
-    private var restaurantList : [RestaurantListDataProvider]?
-    
+    var searchRestaurant = [String]()
+    private var restaurantList : [RestaurantListDataProvider] = []
+    private var restaurantListArray :[RestaurantListDataProvider] = []
+   
     var numberOfRows: Int {
-        return restaurantList?.count ?? 0
+        return restaurantListArray.count
     }
     
     func restaurantAtIndex(atIndex index: Int) -> RestaurantListDataProvider? {
-        return restaurantList?[index]
+        return restaurantListArray[index]
     }
     
-    func sortAsc(sortValue: String?) {
-         sortValue == "Ascending" ? restaurantList?.sort(by: { $0.name.lowercased() < $1.name.lowercased() }) :
-        restaurantList?.sort(by: { $0.name.lowercased() > $1.name.lowercased() })
-    
+    func sortRestaurantList(sortValue: String?) {
+         sortValue == sortType.ascending.rawValue ? restaurantListArray.sort(by: { $0.name.lowercased() < $1.name.lowercased() }) :
+        restaurantListArray.sort(by: { $0.name.lowercased() > $1.name.lowercased() })
+        
     }
-    func getStarImage(starNumber: Double, forRating rating: Double) -> UIImage {
-        if rating >= starNumber {
-            return fullStarImage
-        } else if rating + 0.5 == starNumber {
-            return halfStarImage
-        } else {
-            return halfStarImage
-        }
+    func searchRestaurantList(text: String) {
+        restaurantListArray =  !text.isEmpty ? restaurantList.search(text: text) : restaurantList
     }
     
-   
 }
 
 extension RestaurantListViewModel: ManagerInjected {
     
-    func getRestaurantListData(completion complete: @escaping(ServiceResult<Bool>) -> Void) {
-        restaurantListManager.getRestaurantList { result in
+    func getRestaurantListData(offset:String, completion complete: @escaping(ServiceResult<Bool>) -> Void) {
+        restaurantListManager.getRestaurantList(offset: offset) { result in
             switch result {
             case .success(let restaurantList):
-                self.restaurantList = restaurantList
+                self.restaurantList.append(contentsOf: restaurantList)
+                self.restaurantListArray  = self.restaurantList
                 complete(.success(true))
             case .failure(let error):
                 complete(.failure(.invalidResponse))
             }
+        }
+    }
+}
+
+extension Collection where Element == RestaurantListDataProvider {
+    
+    func search(text: String) -> [RestaurantListDataProvider] {
+        return filter { restaurantData in
+            return restaurantData.name.lowercased().contains(text.lowercased())
         }
     }
 }
