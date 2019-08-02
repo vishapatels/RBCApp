@@ -21,7 +21,7 @@
 		107E07FD22ECFF3300A53F2A /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107E07FC22ECFF3300A53F2A /* Kingfisher.framework */; };
 		107E07FE22ECFF3300A53F2A /* Kingfisher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 107E07FC22ECFF3300A53F2A /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		10A2F66322EE42ED005474E5 /* RestaurantListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A2F66222EE42ED005474E5 /* RestaurantListCell.swift */; };
-		10B627F622F4C9D000DDF0B1 /* RestaurantListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B627F522F4C9D000DDF0B1 /* RestaurantListViewModelTests.swift */; };
+		10B627F822F4CB5A00DDF0B1 /* RestaurantListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B627F722F4CB5A00DDF0B1 /* RestaurantListViewModelTests.swift */; };
 		10D1EAFC22F1A29B00C23D14 /* RestaurantDetailModel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D1EAFB22F1A29B00C23D14 /* RestaurantDetailModel+Extensions.swift */; };
 		10D1EAFF22F2844D00C23D14 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D1EAFE22F2844D00C23D14 /* Date+Extensions.swift */; };
 		10D1EB0722F2891500C23D14 /* RBCAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D1EB0622F2891500C23D14 /* RBCAppTests.swift */; };
@@ -86,7 +86,7 @@
 		107E07F822ECFBFE00A53F2A /* Collection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extension.swift"; sourceTree = "<group>"; };
 		107E07FC22ECFF3300A53F2A /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		10A2F66222EE42ED005474E5 /* RestaurantListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListCell.swift; sourceTree = "<group>"; };
-		10B627F522F4C9D000DDF0B1 /* RestaurantListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListViewModelTests.swift; sourceTree = "<group>"; };
+		10B627F722F4CB5A00DDF0B1 /* RestaurantListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListViewModelTests.swift; sourceTree = "<group>"; };
 		10D1EAFB22F1A29B00C23D14 /* RestaurantDetailModel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RestaurantDetailModel+Extensions.swift"; sourceTree = "<group>"; };
 		10D1EAFE22F2844D00C23D14 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		10D1EB0422F2891400C23D14 /* RBCAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RBCAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -197,7 +197,7 @@
 			children = (
 				10D1EB0622F2891500C23D14 /* RBCAppTests.swift */,
 				10D1EB0822F2891500C23D14 /* Info.plist */,
-				10B627F522F4C9D000DDF0B1 /* RestaurantListViewModelTests.swift */,
+				10B627F722F4CB5A00DDF0B1 /* RestaurantListViewModelTests.swift */,
 			);
 			path = RBCAppTests;
 			sourceTree = "<group>";
@@ -493,7 +493,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				10D1EB0722F2891500C23D14 /* RBCAppTests.swift in Sources */,
-				10B627F622F4C9D000DDF0B1 /* RestaurantListViewModelTests.swift in Sources */,
+				10B627F822F4CB5A00DDF0B1 /* RestaurantListViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

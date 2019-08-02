@@ -27,8 +27,8 @@ struct RestaurantListDataProvider {
 class RestaurantListViewModel {
     
     var searchRestaurant = [String]()
-    private var restaurantList : [RestaurantListDataProvider] = []
-    private var restaurantListArray :[RestaurantListDataProvider] = []
+    var restaurantList : [RestaurantListDataProvider] = []
+    var restaurantListArray :[RestaurantListDataProvider] = []
    
    
     var numberOfRows: Int {
@@ -36,24 +36,24 @@ class RestaurantListViewModel {
     }
     
     func restaurantAtIndex(atIndex index: Int) -> RestaurantListDataProvider? {
+        guard !restaurantListArray.isEmpty, restaurantListArray.count > 0 else { return nil }
         return restaurantListArray[index]
     }
     
-    func sortRestaurantList(sortValue: String?) {
-         sortValue == sortType.ascending.rawValue ? restaurantListArray.sort(by: { $0.name.lowercased() < $1.name.lowercased() }) :
-        restaurantListArray.sort(by: { $0.name.lowercased() > $1.name.lowercased() })
-        
-    }
-    
-    func sortRestaurantListbyRating() {
-        restaurantListArray.sort(by: { $0.rating > $1.rating } )
+    func sortRestaurantList(sortValue: SortType) {
+        switch sortValue {
+        case .ascending:
+            return restaurantListArray.sort(by: { $0.name.lowercased() < $1.name.lowercased() })
+        case .descending:
+            return restaurantListArray.sort(by: { $0.name.lowercased() > $1.name.lowercased() })
+        case .rating:
+            return restaurantListArray.sort(by: { $0.rating > $1.rating } )
+        }
     }
     
     func searchRestaurantList(text: String) {
         restaurantListArray =  !text.isEmpty ? restaurantList.search(text: text) : restaurantList
     }
-    
-    
 }
 
 extension RestaurantListViewModel: ManagerInjected {

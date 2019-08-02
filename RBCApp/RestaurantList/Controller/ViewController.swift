@@ -9,10 +9,11 @@
 import UIKit
 import Kingfisher
 
-enum sortType: String {
+enum SortType: String {
 
     case ascending = "Ascending"
     case descending = "Descending"
+    case rating
 }
 
 class ViewController: UIViewController {
@@ -48,17 +49,17 @@ class ViewController: UIViewController {
         
        let optionMenu = UIAlertController(title: nil, message: "Choose Sorting Option", preferredStyle: .actionSheet)
         let ascendingAction = UIAlertAction(title: "Ascending", style: .default){ action -> Void in
-            self.model.sortRestaurantList(sortValue: sortType.ascending.rawValue)
+            self.model.sortRestaurantList(sortValue: .ascending)
             self.tableView.reloadData()
         }
         
         let descendingAction = UIAlertAction(title: "Descending", style: .default){ action -> Void in
-            self.model.sortRestaurantList(sortValue: sortType.descending.rawValue)
+            self.model.sortRestaurantList(sortValue: .descending)
             self.tableView.reloadData()
         }
         
         let ratingAction = UIAlertAction(title: "By Ratings", style: .default){ action -> Void in
-            self.model.sortRestaurantListbyRating()
+            self.model.sortRestaurantList(sortValue: .rating)
             self.tableView.reloadData()
         }
         
